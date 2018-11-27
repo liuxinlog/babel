@@ -1,2 +1,2 @@
 # babel
-babel for  es6 jsx
+##babel 转义es6 7  jsx  的babel 脚手架
