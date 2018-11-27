@@ -1,0 +1,58 @@
+{
+  "name": "upload-liu-2x",
+  "version": "0.0.4",
+  "description": "HOC that displays a file upload on clicking children",
+  "main": "dist/index.js",
+  "scripts": {
+    "jest": "jest --config tests/config.json",
+    "jest-u": "jest --config tests/config.json -u",
+    "test": "storyshots && npm run jest",
+    "test-ci":
+      "storyshots && npm run jest && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "build": "babel src -d dist",
+    "storybook": "start-storybook -p 6006",
+    "deploy-storybook": "storybook-to-ghpages",
+    "build-storybook": "build-storybook",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --single-quote --trailing-comma es5 --write", "git add"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/navjobs/upload.git"
+  },
+  "keywords": ["jest", "react", "file-upload", "upload"],
+  "author": "Zach Silveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/navjobs/upload/issues"
+  },
+  "homepage": "https://github.com/navjobs/upload#readme",
+  "peerDependencies": {
+    "react": ">=15.0 <= 16"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addon-notes": "^1.0.1",
+    "@kadira/storybook-deployer": "^1.2.0",
+    "@kadira/storyshots": "^2.1.0",
+    "babel-cli": "^6.14.0",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-async-to-promises": "^1.0.5",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "coveralls": "^2.12.0",
+    "enzyme": "^2.7.1",
+    "husky": "^0.13.3",
+    "jest": "^19.0.2",
+    "jsdom": "^9.12.0",
+    "lint-staged": "^3.4.0",
+    "prettier": "^0.22.0",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
